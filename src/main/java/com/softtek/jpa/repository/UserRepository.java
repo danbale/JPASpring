@@ -18,6 +18,10 @@ public interface UserRepository extends JpaRepository<User, String> {
 	@Query(name = "findOneUser", nativeQuery = true)
 	public User user(@Param ("username") String username);
 	
+	@Query(value = "SELECT u FROM User AS u WHERE u.name= :name")
+	public List<User> duplicateUser(@Param ("name") String name);
+	
+	
 	@Query(name="update", nativeQuery=true)
 	public boolean updateUser(@Param ("password") String password,	
 							@Param ("name") String name,

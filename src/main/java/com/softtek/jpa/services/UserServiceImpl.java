@@ -67,6 +67,11 @@ public class UserServiceImpl implements UserService {
 		}
 		return true;
 	}
+
+	@Override
+	public List<User> duplicateUser(String name) {
+		return userRepository.duplicateUser(name);	
+	}
 	
 
 }

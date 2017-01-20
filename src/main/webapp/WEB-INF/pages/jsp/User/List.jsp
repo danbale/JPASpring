@@ -10,7 +10,7 @@
 	<a href="<c:url value="/User/create?status="/>">Add User</a>
 	<a href="<c:url value="/User/home"/>">Return to Index</a>
 	<br/><br/>
-	
+
 	<table class ="table">
 				<thead>
 					<tr>
@@ -31,5 +31,14 @@
 				</tr>
 				</tbody>
 	</table>
+				<div id="custom-search-form" class="form-search form-horizontal pull-left">
+                <div class="input-append span12">
+                    <input  data-ng-model="searchU" type="text" class="search-query" placeholder="Search">
+                    <button data-ng-click="searchUsers()" class="btn"><i class="icon-search"></i></button>
+                </div>
+                <div>
+                	{{resultList}}
+                </div>
+            </div>
 	</div>
 	</div>

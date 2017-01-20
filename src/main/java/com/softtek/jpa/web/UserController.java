@@ -13,6 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -64,6 +65,20 @@ public class UserController {
 		return new ResponseEntity<List<User>>(userList, HttpStatus.OK);
 		
 	}
+	
+	
+	@RequestMapping(value="/find", method= RequestMethod.POST)
+	public ResponseEntity<?> searchUser(@RequestBody String name){
+		System.out.println(name);
+		List<User> userList = userService.duplicateUser(name);
+		System.out.println(userList);
+		if(userList.size() > 1){
+			return new ResponseEntity<List<User>>(HttpStatus.CONFLICT);
+		}
+		return new ResponseEntity<List<User>>(userList, HttpStatus.OK);
+		
+	}
+	
 
 
 	@RequestMapping(value="/edit")

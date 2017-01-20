@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.softtek.jpa.domain.Cart;
 import com.softtek.jpa.domain.ShipTo;
 import com.softtek.jpa.domain.Status;
-import com.softtek.jpa.domain.User;
 import com.softtek.jpa.services.CartService;
 import com.softtek.jpa.services.ShipToService;
 import com.softtek.jpa.services.StatusService;

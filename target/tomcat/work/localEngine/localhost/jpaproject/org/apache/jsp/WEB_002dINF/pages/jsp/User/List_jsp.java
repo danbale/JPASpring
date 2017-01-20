@@ -72,7 +72,7 @@ public final class List_jsp extends org.apache.jasper.runtime.HttpJspBase
         return;
       out.write("\">Return to Index</a>\n");
       out.write("\t<br/><br/>\n");
-      out.write("\t\n");
+      out.write("\n");
       out.write("\t<table class =\"table\">\n");
       out.write("\t\t\t\t<thead>\n");
       out.write("\t\t\t\t\t<tr>\n");
@@ -93,6 +93,15 @@ public final class List_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t</tr>\n");
       out.write("\t\t\t\t</tbody>\n");
       out.write("\t</table>\n");
+      out.write("\t\t\t\t<div id=\"custom-search-form\" class=\"form-search form-horizontal pull-left\">\n");
+      out.write("                <div class=\"input-append span12\">\n");
+      out.write("                    <input  data-ng-model=\"searchU\" type=\"text\" class=\"search-query\" placeholder=\"Search\">\n");
+      out.write("                    <button data-ng-click=\"searchUsers()\" class=\"btn\"><i class=\"icon-search\"></i></button>\n");
+      out.write("                </div>\n");
+      out.write("                <div>\n");
+      out.write("                \t{{resultList}}\n");
+      out.write("                </div>\n");
+      out.write("            </div>\n");
       out.write("\t</div>\n");
       out.write("\t</div>");
     } catch (Throwable t) {
